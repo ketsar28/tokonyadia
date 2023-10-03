@@ -42,6 +42,7 @@ DELETE FROM m_order;
 DELETE FROM m_order_detail;
 
 
+
 DROP TABLE m_store;
 DROP TABLE m_product;
 DROP TABLE m_product_price;
