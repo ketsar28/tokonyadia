@@ -2,7 +2,7 @@ package com.enigma.tokonyadia.service.impl;
 
 import com.enigma.tokonyadia.entity.Store;
 import com.enigma.tokonyadia.repository.StoreRepository;
-import com.enigma.tokonyadia.service.interfaces.StoreService;
+import com.enigma.tokonyadia.service.StoreService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

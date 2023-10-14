@@ -1,4 +1,4 @@
-package com.enigma.tokonyadia.service.interfaces;
+package com.enigma.tokonyadia.service;
 
 import com.enigma.tokonyadia.model.request.OrderRequest;
 import com.enigma.tokonyadia.model.response.OrderResponse;

@@ -1,12 +1,16 @@
 package com.enigma.tokonyadia.model.response;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Setter
-@Getter
-@NoArgsConstructor
+@Data
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder(toBuilder = true)
 public class RegisterResponse {
+
     private String email;
+
 }

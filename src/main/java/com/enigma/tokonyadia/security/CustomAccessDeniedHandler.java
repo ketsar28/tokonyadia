@@ -18,7 +18,9 @@ import java.io.IOException;
 @RequiredArgsConstructor
 @Slf4j
 public class CustomAccessDeniedHandler implements AccessDeniedHandler {
+
     private final ObjectMapper objectMapper;
+
     @Override
     public void handle(HttpServletRequest request, HttpServletResponse response, AccessDeniedException accessDeniedException) throws IOException, ServletException {
         CommonResponse<Object> commonResponse = CommonResponse.builder()
@@ -27,6 +29,7 @@ public class CustomAccessDeniedHandler implements AccessDeniedHandler {
                 .build();
 
         String commonResponseString = objectMapper.writeValueAsString(commonResponse);
+        log.error("error: access denied: {}", accessDeniedException.getMessage());
 
         response.setContentType("application/json");
         response.setStatus(HttpServletResponse.SC_FORBIDDEN);

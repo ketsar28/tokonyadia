@@ -3,7 +3,7 @@ package com.enigma.tokonyadia.controller;
 import com.enigma.tokonyadia.model.request.OrderRequest;
 import com.enigma.tokonyadia.model.response.CommonResponse;
 import com.enigma.tokonyadia.model.response.OrderResponse;
-import com.enigma.tokonyadia.service.interfaces.OrderService;
+import com.enigma.tokonyadia.service.OrderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

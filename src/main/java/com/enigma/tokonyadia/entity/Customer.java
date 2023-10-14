@@ -20,16 +20,16 @@ public class Customer {
     @Column(name = "id")
     private String id;
 
-    @Column(name = "name", nullable = false)
+    @Column(name = "name", nullable = true)
     private String name;
 
-    @Column(name = "address",nullable = false)
+    @Column(name = "address",nullable = true)
     private String address;
 
-    @Column(name = "mobile_phone", nullable = false, unique = true)
+    @Column(name = "mobile_phone", nullable = true, unique = true)
     private String mobilePhone;
 
-    @Column(name = "email", nullable = false, unique = true)
+    @Column(name = "email", nullable = true, unique = true)
     private String email;
 
     @OneToOne

@@ -13,11 +13,10 @@ import java.util.Collection;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder(toBuilder = true)
-public class UserDetailImpl implements UserDetails {
+public class UserDetailsImpl implements UserDetails {
 
     private String email;
     private String password;
-
     private Collection<? extends GrantedAuthority> authorities;
 
     @Override
@@ -55,3 +54,4 @@ public class UserDetailImpl implements UserDetails {
         return true;
     }
 }
+

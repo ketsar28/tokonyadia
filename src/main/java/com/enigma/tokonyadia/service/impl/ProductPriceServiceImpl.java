@@ -2,7 +2,7 @@ package com.enigma.tokonyadia.service.impl;
 
 import com.enigma.tokonyadia.entity.ProductPrice;
 import com.enigma.tokonyadia.repository.ProductPriceRepository;
-import com.enigma.tokonyadia.service.interfaces.ProductPriceService;
+import com.enigma.tokonyadia.service.ProductPriceService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;

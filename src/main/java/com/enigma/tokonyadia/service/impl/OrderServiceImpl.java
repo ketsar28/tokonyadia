@@ -7,9 +7,9 @@ import com.enigma.tokonyadia.entity.ProductPrice;
 import com.enigma.tokonyadia.model.request.OrderRequest;
 import com.enigma.tokonyadia.model.response.*;
 import com.enigma.tokonyadia.repository.OrderRepository;
-import com.enigma.tokonyadia.service.interfaces.CustomerService;
-import com.enigma.tokonyadia.service.interfaces.OrderService;
-import com.enigma.tokonyadia.service.interfaces.ProductPriceService;
+import com.enigma.tokonyadia.service.CustomerService;
+import com.enigma.tokonyadia.service.OrderService;
+import com.enigma.tokonyadia.service.ProductPriceService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

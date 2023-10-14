@@ -2,7 +2,7 @@ package com.enigma.tokonyadia.service.impl;
 
 import com.enigma.tokonyadia.entity.Customer;
 import com.enigma.tokonyadia.repository.CustomerRepository;
-import com.enigma.tokonyadia.service.interfaces.CustomerService;
+import com.enigma.tokonyadia.service.CustomerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;

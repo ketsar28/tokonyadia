@@ -2,10 +2,11 @@ package com.enigma.tokonyadia.controller;
 
 import com.enigma.tokonyadia.entity.Customer;
 import com.enigma.tokonyadia.model.response.CommonResponse;
-import com.enigma.tokonyadia.service.interfaces.CustomerService;
+import com.enigma.tokonyadia.service.CustomerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,6 +28,7 @@ public class CustomerController {
     }
 
     @GetMapping
+    @PreAuthorize("hasAnyRole('ADMIN')")
     public ResponseEntity<?> getAllCustomer() {
         List<Customer> customers = customerService.getAll();
         return ResponseEntity.status(HttpStatus.OK)
@@ -48,6 +50,7 @@ public class CustomerController {
     }
 
     @PutMapping
+    @PreAuthorize("hasRole('CUSTOMER') and @userSecurity.checkCustomer(authentication, #customer.getId())")
     public ResponseEntity<?> updateCustomer(@RequestBody Customer customer) {
         return ResponseEntity.status(HttpStatus.OK)
                 .body(CommonResponse.<Customer>builder()
@@ -58,6 +61,7 @@ public class CustomerController {
     }
 
     @DeleteMapping(path = "/{id}")
+    @PreAuthorize("hasRole('CUSTOMER') and @userSecurity.checkCustomer(authentication, #id)")
     public ResponseEntity<?> deleteCustomer(@PathVariable String id) {
         customerService.deleteById(id);
         Customer customer = new Customer();

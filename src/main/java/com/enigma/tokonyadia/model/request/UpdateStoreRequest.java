@@ -9,11 +9,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder(toBuilder = true)
-public class AuthRequest {
-    private String email;
-    private String password;
-    private String name;
+public class UpdateStoreRequest {
+    private String storeId;
+    private String noSiup;
+    private String storeName;
     private String address;
     private String mobilePhone;
 
 }
+

@@ -1,25 +1,25 @@
 package com.enigma.tokonyadia.entity;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
-
-@Getter
-@Setter
-@Entity
-@NoArgsConstructor
+@Data
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder(toBuilder = true)
+@Entity
 @Table(name = "m_admin")
 public class Admin {
 
     @Id
-    @GenericGenerator(strategy = "uuid2", name="system-uuid")
+    @GenericGenerator(strategy = "uuid2", name = "system-uuid")
     @GeneratedValue(generator = "system-uuid")
     private String id;
-
     private String name;
 
     @Column(name = "email", unique = true)
@@ -29,3 +29,4 @@ public class Admin {
     @JoinColumn(name = "user_credential_id")
     private UserCredential userCredential;
 }
+

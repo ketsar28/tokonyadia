@@ -16,7 +16,7 @@ import java.io.IOException;
 @Component
 @RequiredArgsConstructor
 public class AuthEntryPoint implements AuthenticationEntryPoint {
-   private final ObjectMapper objectMapper;
+    private final ObjectMapper objectMapper;
 
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException) throws IOException, ServletException {
@@ -32,3 +32,4 @@ public class AuthEntryPoint implements AuthenticationEntryPoint {
         response.getWriter().write(commonResponseString);
     }
 }
+

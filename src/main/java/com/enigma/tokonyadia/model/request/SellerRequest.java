@@ -1,11 +1,13 @@
 package com.enigma.tokonyadia.model.request;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Setter
-@Getter
-@NoArgsConstructor
+@Data
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder(toBuilder = true)
 public class SellerRequest {
     private String username;
@@ -13,4 +15,3 @@ public class SellerRequest {
     private String storeName;
     private String mobilePhone;
 }
-

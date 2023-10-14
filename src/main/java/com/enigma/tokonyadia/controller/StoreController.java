@@ -1,8 +1,9 @@
 package com.enigma.tokonyadia.controller;
 
 import com.enigma.tokonyadia.entity.Store;
-import com.enigma.tokonyadia.service.interfaces.StoreService;
+import com.enigma.tokonyadia.service.StoreService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -30,6 +31,7 @@ public class StoreController {
     }
 
     @PutMapping
+    @PreAuthorize("hasRole('SELLER') and @userSecurity.checkSeller(authentication, #request.getStoreId())")
     public Store updateStore(@RequestBody Store store){
         return storeService.update(store);
     }

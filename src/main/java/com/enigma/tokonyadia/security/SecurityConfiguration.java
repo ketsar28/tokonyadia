@@ -1,8 +1,5 @@
-package com.enigma.tokonyadia.config;
+package com.enigma.tokonyadia.security;
 
-import com.enigma.tokonyadia.security.AuthEntryPoint;
-import com.enigma.tokonyadia.security.AuthTokenFilter;
-import com.enigma.tokonyadia.security.CustomAccessDeniedHandler;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,7 +10,6 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
@@ -30,7 +26,6 @@ public class SecurityConfiguration {
     private final AuthTokenFilter authTokenFilter;
     private final AuthEntryPoint authEntryPoint;
     private final CustomAccessDeniedHandler customAccessDeniedHandler;
-    private final UserDetailsService userDetailsService;
 
     @Bean
     public PasswordEncoder passwordEncoder() {
